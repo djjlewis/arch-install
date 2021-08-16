@@ -12,7 +12,7 @@ btrfs su cr /mnt/@snapshots
 
 umount /mnt
 
-mount -o noatime,compress=zstd,space_cache,subvol=@ /dev/{target_drive}3 /mnt
+mount -o noatime,compress=zstd,space_cache,subvol=@ /dev/${target_drive}3 /mnt
 
 mkdir -p /mnt/{boot/efi,home,var/cache,var/log,.snapshots}
 
