@@ -1,0 +1,1 @@
+pacman -S --noconfirm i3 alacritty dmenu dunst feh firefox flameshot gnome-keyring htop mpv nerd-fonts-source-code-pro network-manager-applet picom pavucontrol olybar redshift starship terminus-font stow thunar tmux ttf-inconsolata xlclip xdg-userdirs xorg-xinit 
