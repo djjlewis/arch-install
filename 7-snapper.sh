@@ -1,6 +1,6 @@
 sudo pacman -S --noconfirm snapper
-#sudo umount /.snapshots
-#sudo rm -rf /.snapshots
+sudo umount /.snapshots
+sudo rm -rf /.snapshots
 
 sudo snapper -c root create-config /
 

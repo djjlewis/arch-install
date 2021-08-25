@@ -1,4 +1,8 @@
-sudo systemctl enable cronie.service
-(crontab -l 2>/dev/null; echo "*/5 * * * * DISPLAY=:0 /home/dan/.local/bin/wallpaper") | crontab -
+mkdir ~/aur
 
-git clone https://gitlab.com/dwt1/wallpapers.git ~/Pictures/wallpaper
+cd ~/aur
+git clone https://aur.archlinux.org/yay.git 
+cd ~/aur/yay
+makepkg -si --noconfirm
+
+yay -S --noconfirm polybar nerd-fonts-source-code-pro
