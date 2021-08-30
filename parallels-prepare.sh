@@ -9,6 +9,7 @@ timedatectl set-ntp true
 target_drive=sda
 
 sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/${target_drive}
+  o
   n # new partition
   p # primary
   1 # partition number 1
@@ -21,9 +22,11 @@ sed -e 's/\s*\([\+0-9a-zA-Z]*\).*/\1/' << EOF | fdisk /dev/${target_drive}
   2 # partion number 2
 
 
+  t
+  2
+  83
   p # print the in-memory partition table
   w # write the partition table
-  q # and we're done
 EOF
 
 
