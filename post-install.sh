@@ -1,4 +1,11 @@
-sudo pacman -S --noconfirm xorg-server xorg-xinit xorg-apps xterm mesa xf86-video-vesa xf86-video-vmware xclip xdg-utils xdg-user-dirs xorg-xinit alacritty cronie htop mpv network-manager-applet neovim picom pavucontrol starship terminus-font stow tmux ttf-inconsolata zsh
+#!/bin/bash
+set -e
+
+# other misc useful packages
+sudo pacman -S --noconfirm alacritty cronie htop mpv network-manager-applet neovim picom pavucontrol starship stow terminus-font tmux ttf-inconsolata zsh
+
+# X11 packages (comment out if not needed e.g. server role)
+sudo pacman -S --noconfirm mesa xf86-video-vesa xf86-video-vmware xclip xdg-utils xdg-user-dirs xorg-apps xorg-server xorg-xinit xterm # xf86-video-amdgpu xf86-video-nvidia xf86-video-intel 
 
 [ ! -d ~/.local ] && mkdir ~/.local
 
