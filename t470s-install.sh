@@ -14,7 +14,7 @@ echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 echo root:password | chpasswd
 
-pacman -S --noconfirm acpi acpi_call acpid alsa-utils avahi base-devel bluez bluez-utils dialog dosfstools efibootmgr firewalld grub intel-ucode linux-headers man-db man-pages networkmanager nss-mdns pipewire pipewire-alsa pipewire-pulse pipewire-jack os-prober tlp wpa_supplicant xf86-video-intel
+pacman -S --noconfirm acpi acpi_call acpid alsa-utils avahi base-devel bluez bluez-utils dialog dosfstools efibootmgr firewalld grub intel-ucode linux-headers man-db man-pages networkmanager nss-mdns pipewire pipewire-alsa pipewire-pulse pipewire-jack openssh os-prober tlp wpa_supplicant xf86-video-intel
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
