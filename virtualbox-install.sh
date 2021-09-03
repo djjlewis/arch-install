@@ -14,7 +14,7 @@ echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 echo root:password | chpasswd
 
-pacman -S --noconfirm base-devel dosfstools efibootmgr grub linux-headers man-db man-pages networkmanager os-prober
+pacman -S --noconfirm alsa-utils base-devel dosfstools efibootmgr grub linux-headers man-db man-pages networkmanager pipewire os-prober 
 
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg

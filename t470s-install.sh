@@ -14,12 +14,18 @@ echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 echo root:password | chpasswd
 
-pacman -S --noconfirm alsa-utils base-devel dosfstools grub linux-headers man-db man-pages networkmanager os-prober pipewire
+pacman -S --noconfirm acpi acpi_call acpid alsa-utils avahi base-devel bluez bluez-utils dialog dosfstools efibootmgr firewalld grub intel-ucode linux-headers man-db man-pages networkmanager nss-mdns pipewire pipewire-alsa pipewire-pulse pipewire-jack os-prober tlc wpa_supplicant xf86-video-intel
 
-grub-install --target=i386-pc /dev/sda
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
+systemctl enable acpid
+systemctl enable avahi-daemon
+systemctl enable bluetooth
+systemctl enable firewalld
 systemctl enable NetworkManager
+systemctl enable sshd
+systemctl enable tlp
 
 useradd -m dan
 echo dan:password | chpasswd
