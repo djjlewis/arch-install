@@ -4,13 +4,6 @@ set -e
 # other misc useful packages
 sudo pacman -S --noconfirm alacritty cronie htop mpv network-manager-applet neovim openssh picom pavucontrol starship stow terminus-font tmux ttf-inconsolata zsh
 
-# X11 packages (comment out if not needed e.g. server role)
-sudo pacman -S --noconfirm mesa xf86-video-vesa xf86-video-vmware xclip xdg-utils xdg-user-dirs xorg-apps xorg-server xorg-xinit xterm
-
-#sudo pacman -S --noconfirm xf86-video-amdgpu
-#sudo pacman -S --noconfirm xf86-video-nvidia
-#sudo pacman -S --noconfirm xf86-video-intel 
-
 [ ! -d ~/.local ] && mkdir ~/.local
 
 if [ ! -d ~/.dotfiles ]; 
