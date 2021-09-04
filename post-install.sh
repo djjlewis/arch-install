@@ -5,7 +5,11 @@ set -e
 sudo pacman -S --noconfirm alacritty cronie htop mpv network-manager-applet neovim openssh picom pavucontrol starship stow terminus-font tmux ttf-inconsolata zsh
 
 # X11 packages (comment out if not needed e.g. server role)
-sudo pacman -S --noconfirm mesa xf86-video-vesa xf86-video-vmware xclip xdg-utils xdg-user-dirs xorg-apps xorg-server xorg-xinit xterm # xf86-video-amdgpu xf86-video-nvidia xf86-video-intel 
+sudo pacman -S --noconfirm mesa xf86-video-vesa xf86-video-vmware xclip xdg-utils xdg-user-dirs xorg-apps xorg-server xorg-xinit xterm
+
+#sudo pacman -S --noconfirm xf86-video-amdgpu
+#sudo pacman -S --noconfirm xf86-video-nvidia
+#sudo pacman -S --noconfirm xf86-video-intel 
 
 [ ! -d ~/.local ] && mkdir ~/.local
 
@@ -34,5 +38,9 @@ then
 fi
 
 yay -S --noconfirm nerd-fonts-source-code-pro
+
+# enable cron and add wallpaper job
+sudo systemctl enable cronie.service
+(crontab -l 2>/dev/null; echo "*/5 * * * * DISPLAY=:0 /home/dan/.local/bin/wallpaper") | crontab -
 
 chsh -s /usr/bin/zsh
