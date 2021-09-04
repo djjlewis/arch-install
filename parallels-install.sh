@@ -14,19 +14,7 @@ echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 arch.localdomain arch" >> /etc/hosts
 echo root:password | chpasswd
 
-pacman -S --noconfirm \
-	alsa-utils \ 
-	base-devel \
-	dosfstools \
-	efibootmgr \
-	firewalld \
-	grub \
-	linux-headers \
-	man-db man-pages \
-	networkmanager \
-	pipewire pipewire-alsa pipewire-pulse pipewire-jack \
-	openssh \
-	os-prober
+pacman -S --noconfirm alsa-utils base-devel dosfstools efibootmgr firewalld grub linux-headers man-db man-pages networkmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack openssh os-prober
 
 # common x11
 pacman -S --noconfirm mesa xclip xdg-utils xdg-user-dirs xf86-video-vesa xf86-video-vmware xorg-apps xorg-server xorg-xinit xterm 
