@@ -1,1 +1,1 @@
-yay -S bitwarden diff-so-fancy
+yay -S diff-so-fancy expressvpn bc pcloud-drive skypeforlinux-stable-bin jetbrains-toolbox
